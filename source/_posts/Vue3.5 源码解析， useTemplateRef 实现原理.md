@@ -2,6 +2,7 @@
 title: Vue3.5 源码解析， useTemplateRef 实现原理
 date: 2024-09-06 14:07:04
 tags: Vue3
+categories: Vue3
 ---
 
 ## useTemplateRef 的作用

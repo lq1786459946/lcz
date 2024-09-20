@@ -2,6 +2,7 @@
 title: vue3 Api
 date: 2024-06-13 16:39:58
 tags: Vue3
+categories: Vue3
 # cover: https://i.postimg.cc/rFkk79gD/image-20240827154520239.png
 ---
 

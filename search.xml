@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Vue3.5 useId</title>
+      <link href="//post/Vue3.5%20useId.html"/>
+      <url>//post/Vue3.5%20useId.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="useId的作用"><a href="#useId的作用" class="headerlink" title="useId的作用"></a>useId的作用</h2><p>他的作用也是生成唯一ID，同一个Vue应用里面每次调用<code>useId</code>生成的ID都不同。</p><p>使用方法也很简单，代码如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;script setup lang=<span class="string">&quot;ts&quot;</span>&gt;</span><br><span class="line"><span class="keyword">import</span> &#123; useId &#125; <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> id0 = <span class="title function_">useId</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(id0); <span class="comment">// v-0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> id1 = <span class="title function_">useId</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(id1); <span class="comment">// v-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> id2 = <span class="title function_">useId</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(id2); <span class="comment">// v-2</span></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><h2 id="useId是如何实现的"><a href="#useId是如何实现的" class="headerlink" title="useId是如何实现的"></a>useId是如何实现的</h2><p>来看看<code>useId</code>的源码，非常简单！！简化后的代码如下：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">useId</span>(<span class="params"></span>): string &#123;</span><br><span class="line">  <span class="keyword">const</span> i = <span class="title function_">getCurrentInstance</span>()</span><br><span class="line">  <span class="keyword">if</span> (i) &#123;</span><br><span class="line">    <span class="keyword">return</span> (i.<span class="property">appContext</span>.<span class="property">config</span>.<span class="property">idPrefix</span> || <span class="string">&#x27;v&#x27;</span>) + <span class="string">&#x27;-&#x27;</span> + i.<span class="property">ids</span>[<span class="number">0</span>] + i.<span class="property">ids</span>[<span class="number">1</span>]++</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>生成的ID分为三部分：</p><ul><li><p>第一部分为前缀：<a href="https://link.juejin.cn/?target=https://cn.vuejs.org/api/application.html%23app-config-idprefix"><code>app.config.idPrefix</code></a>，如果没有配置，那么就是字符串<code>v</code>。</p></li><li><p>第二部分字符串：<code>-</code>。</p></li><li><p>第三部分的值为一个自增的数字，存在vue实例上面的<code>ids</code>属性，所有的vue实例上面的<code>ids</code>属性都是指向同一个数组。这也就是为什么说<code>useId</code>可以在<code>Vue应用内</code>生成唯一的ID，而不是在<code>Vue组件内</code>生成唯一的ID。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Vue3 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>前端优化首次加载速度</title>
       <link href="//post/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E9%A6%96%E6%AC%A1%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6.html"/>
       <url>//post/%E5%89%8D%E7%AB%AF%E4%BC%98%E5%8C%96%E9%A6%96%E6%AC%A1%E5%8A%A0%E8%BD%BD%E9%80%9F%E5%BA%A6.html</url>

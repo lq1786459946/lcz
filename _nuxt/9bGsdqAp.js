@@ -1,1 +1,0 @@
-import{g as s}from"./C3lmZdGn.js";const e=t=>s("/sciapi/api/tools/type/treeList",{method:"post",params:{...t}}),a=t=>s("/sciapi/api/analysisTask/list",{method:"post",params:{...t}}),i=()=>s("/sciapi/api/tools/type/treeToolList",{method:"post"});export{i as a,a as b,e as g};

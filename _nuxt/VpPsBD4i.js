@@ -1,1 +1,0 @@
-import{b4 as s,b3 as c}from"./CnuomZrk.js";const i=$fetch.create({async onRequest({options:e}){e.baseURL=s().public.apiBaseUrl||"/api";const a=c("accessToken").value;a&&(e.headers={...e.headers,Authorization:`Bearer ${a}`})}});export{i as $};

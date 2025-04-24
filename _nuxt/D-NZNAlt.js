@@ -1,1 +1,0 @@
-import{m as b,b0 as e,b_ as f}from"./CnuomZrk.js";const j=(c,r)=>b(()=>{if(!(r!=null&&r.query))return e(c);const a=e(c),t=e(r==null?void 0:r.query),u=Object.fromEntries(Object.entries(t).map(([m,y])=>[m,e(y)]));return`${a}${u?`?${f(u)}`:""}`});export{j as c};

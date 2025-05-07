@@ -69,7 +69,7 @@
       &.bg-#{$color-name},
       &.text-#{$color-name} {
         .v-alert__prepend .v-icon {
-          color: rgb(var(--v-theme-#{$color-name})) !important;
+          color: rgb(var(--v-theme-#{$color-name}));
         }
       }
 

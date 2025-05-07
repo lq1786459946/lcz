@@ -1,6 +1,8 @@
 .layout-blank {
   .auth-wrapper {
     min-block-size: 100dvh;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
   }
 
   .auth-footer-mask {
@@ -33,6 +35,27 @@
 
   .auth-card, .auth-card-v2, .auth-illustration {
     z-index: 1 !important;
+  }
+  .auth-card-v2{
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+  }
+  .d-I18n{
+    width: 70%;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5em;
+    display: flex;
+    align-items: center;
+  }
+
+  .z-I18n{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5em;
+    display: flex;
+    align-items: center;
   }
 }
 

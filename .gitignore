@@ -19,8 +19,6 @@ logs
 .idea
 
 # Local env files
-.env
-.env.*
 !.env.example
 
 # 👉 Custom Git ignores
@@ -46,5 +44,4 @@ plugins/iconify/icons.css
 public/mockServiceWorker.js
 
 # Env files
-.env*
 !.env.example

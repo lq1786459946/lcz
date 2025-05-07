@@ -1,95 +1,34 @@
-
-
-const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
-
 // 👉 Redirects
 const redirects = [
-  // ℹ️ We are redirecting to different pages based on role.
-  // NOTE: Role is just for UI purposes. ACL is based on abilities.
-  {
-    path: '/',
-    name: 'index',
-    meta: {
-      middleware: to => {
-        const { data: sessionData } = useAuth()
-
-        const userRole = sessionData.value?.user.role
-
-        if (userRole === 'admin')
-          return { name: 'dashboards-crm' }
-        if (userRole === 'client')
-          return { name: 'access-control' }
-
-        return { name: 'login', query: to.query }
-      },
-    },
-    component: h('div'),
-  },
-  {
-    path: '/pages/user-profile',
-    name: 'pages-user-profile',
-    redirect: () => ({ name: 'pages-user-profile-tab', params: { tab: 'profile' } }),
-  },
-  {
-    path: '/pages/account-settings',
-    name: 'pages-account-settings',
-    redirect: () => ({ name: 'pages-account-settings-tab', params: { tab: 'account' } }),
-  },
-]
-
-const routes = [
-  // Email filter
-  {
-    path: '/apps/email/filter/:filter',
-    name: 'apps-email-filter',
-    component: emailRouteComponent,
-    meta: {
-      navActiveLink: 'apps-email',
-      layoutWrapperClasses: 'layout-content-height-fixed',
-    },
-  },
-
-  // Email label
-  {
-    path: '/apps/email/label/:label',
-    name: 'apps-email-label',
-    component: emailRouteComponent,
-    meta: {
-      // contentClass: 'email-application',
-      navActiveLink: 'apps-email',
-      layoutWrapperClasses: 'layout-content-height-fixed',
-    },
-  },
-  {
-    path: '/dashboards/logistics',
-    name: 'dashboards-logistics',
-    component: () => import('@/pages/apps/logistics/dashboard.vue'),
-  },
-  {
-    path: '/dashboards/academy',
-    name: 'dashboards-academy',
-    component: () => import('@/pages/apps/academy/dashboard.vue'),
-  },
-  {
-    path: '/apps/ecommerce/dashboard',
-    name: 'apps-ecommerce-dashboard',
-    component: () => import('@/pages/dashboards/ecommerce.vue'),
-  },
-]
-
+	// ℹ️ We are redirecting to different pages based on role.
+	// NOTE: Role is just for UI purposes. ACL is based on abilities.
+	{
+		path: "/",
+		name: "index",
+		redirect: () => {
+			return { name: "front-pages-landing-page" };
+			// return{ name: 'analysisTools-crm'}
+		},
+	},
+	{
+		path: "/analysisTool/:id",
+		name: "analysisTool",
+		component: () => import("@/pages/analysisTool/[id].vue"),
+	},
+];
 
 // https://router.vuejs.org/api/interfaces/routeroptions.html
 export default {
-  routes: scannedRoutes => [
-    ...redirects,
-    ...routes,
-    ...scannedRoutes,
-  ],
-  scrollBehaviorType: 'smooth',
-  scrollBehavior(to) {
-    if (to.hash)
-      return { el: to.hash, behavior: 'smooth', top: 60 }
+	routes: scannedRoutes => [...redirects, ...scannedRoutes],
+	scrollBehaviorType: "smooth",
+	scrollBehavior(to, from, savedPosition) {
+		// 如果是从其他页面跳转过来，保持原位置
 
-    return { top: 0 }
-  },
-}
+		if (to.hash) return { el: to.hash, behavior: "smooth", top: 60 };
+		if (to.path == "/analysisTools/All") {
+			return false;
+		} else {
+			return { top: 0 };
+		}
+	},
+};

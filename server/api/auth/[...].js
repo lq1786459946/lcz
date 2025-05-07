@@ -1,5 +1,5 @@
-import CredentialsProvider from 'next-auth/providers/credentials'
 import { NuxtAuthHandler } from '#auth'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
 // import GoogleProvider from 'next-auth/providers/google'
 // const runtimeConfig = useRuntimeConfig()

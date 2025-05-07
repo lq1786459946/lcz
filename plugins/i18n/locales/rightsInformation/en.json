@@ -1,0 +1,16 @@
+{
+  "MemberInformation": "Member Information",
+  "RightsInformation": "Rights And Interests Information",
+  "Name": "Name",
+  "MembershipType": "Membership Type",
+  "AnalysisTools": "Analysis Tools",
+  "EquityType": "Equity Type",
+  "NumberOfUse": "Number Of Use",
+  "RowsPerPage": "Rows Per Page",
+  "RegistrationDate": "Registration Date",
+  "MemberEndDate": " Expire",
+  "RegistrationMethod": "Registration Method",
+  "Email":"Email",
+  "Phone":"Phone",
+  "EquityUpgrade": "Equity Upgrade"
+}

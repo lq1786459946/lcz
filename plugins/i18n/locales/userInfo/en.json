@@ -1,0 +1,21 @@
+{
+  "UpdatePhoto": "Update New Photo",
+  "Tip": "Allowed JPG, PNG. Max size of 2MB",
+  "Reset": "Reset",
+  "Nickname": "Nickname",
+  "NicknamePlaceholder": "Enter Nickname",
+  "Country": "Country Or Region",
+  "CountryPlaceholder": "Please Enter Your Country or Region",
+  "IdentityType": "Identity Type",
+  "IdentityTypePlaceholder": "Please Enter Students, Teachers, Doctors, Etc.",
+  "Unit": "Unit Or School",
+  "UnitPlaceholder": "Please Enter The Name Of Efficient, Hospital, Institution",
+  "Major": "Major",
+  "MajorPlaceholder": "Please Enter Your Major Or Research Direction",
+  "ProfessionalTitle": "Professional Title",
+  "ProfessionalPlaceholder": "Please Enter The Professional Title Obtained In The Professional Field",
+  "Save": "Save changes",
+  "NicknameRule": "Please enter your nickname",
+  "FileTip": "File Size Limit Exceeded!",
+  "OperationSuccessful": "Operation Is Successful"
+}

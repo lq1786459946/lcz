@@ -1,1 +1,35 @@
 // Write your overrides
+@keyframes slide {
+  from {
+    top: 0;
+  }
+  to {
+    top: 3rem;
+  }
+}
+.skin--default{
+  position: relative !important;
+}
+.v-alert{
+  position: fixed !important;
+  z-index: 9999;
+  animation: slide 0.1s 1 forwards;
+  height: 40px;
+  display: flex !important;
+  align-items: center !important;
+  border-radius: 6px;
+  padding: 16px;
+}
+.v-alert__prepend{
+  background-color:transparent !important;
+  box-shadow: none !important;
+  margin-right: 0 !important;
+  .v-icon{
+    color: #fff !important;
+  }
+}
+.layout-vertical-nav{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0 3px 8px rgba(var(--v-shadow-key-umbra-color), .14), 0 0 transparent, 0 0 transparent;
+}

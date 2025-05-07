@@ -203,5 +203,7 @@
         "item": "item"
       }
     }
-  }
+  },
+  "total-header": "Total ",
+  "total-footer": " Items"
 }

@@ -1,0 +1,16 @@
+{
+  "MemberInformation": "会员信息",
+  "RightsInformation": "权益信息",
+  "Name": "姓名",
+  "MembershipType": "会员类型",
+  "MemberEndDate": "到期",
+  "RegistrationDate": "注册时间",
+  "RegistrationMethod": "注册方式",
+  "Email":"邮箱",
+  "Phone":"手机号",
+  "AnalysisTools": "分析工具",
+  "EquityType": "权益类型",
+  "NumberOfUse": "使用次数",
+  "RowsPerPage": "每页条数",
+  "EquityUpgrade": "权益升级"
+}

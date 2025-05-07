@@ -6,14 +6,25 @@ const emailRouteComponent = () => import('@/pages/apps/email/index.vue')
 const redirects = [
   // ℹ️ We are redirecting to different pages based on role.
   // NOTE: Role is just for UI purposes. ACL is based on abilities.
-//   {
-//     path: '/',
-//     name: 'index',
-//     redirect: () => {
-//       return{ name: 'pages-user-profile'}
-//       // return{ name: 'analysisTools-crm'}
-//     },
-//   },
+  {
+    path: '/',
+    name: 'index',
+    meta: {
+      middleware: to => {
+        const { data: sessionData } = useAuth()
+
+        const userRole = sessionData.value?.user.role
+
+        if (userRole === 'admin')
+          return { name: 'dashboards-crm' }
+        if (userRole === 'client')
+          return { name: 'access-control' }
+
+        return { name: 'login', query: to.query }
+      },
+    },
+    component: h('div'),
+  },
   {
     path: '/pages/user-profile',
     name: 'pages-user-profile',

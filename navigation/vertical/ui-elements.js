@@ -1,5 +1,5 @@
 export default [
-  { heading: 'UI Elements', },
+  { heading: 'UI Elements' },
   {
     title: 'Typography',
     icon: { icon: 'ri-text' },

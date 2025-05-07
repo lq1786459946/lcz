@@ -1,17 +1,18 @@
 <script setup>
+import { TransitionGroup } from 'vue'
 import { layoutConfig } from '@layouts'
 import {
-    TransitionExpand,
-    VerticalNavLink,
+  TransitionExpand,
+  VerticalNavLink,
 } from '@layouts/components'
+import { canViewNavMenuGroup } from '@layouts/plugins/casl'
 import { useLayoutConfigStore } from '@layouts/stores/config'
 import { injectionKeyIsVerticalNavHovered } from '@layouts/symbols'
 import {
-    getDynamicI18nProps,
-    isNavGroupActive,
-    openGroups,
+  getDynamicI18nProps,
+  isNavGroupActive,
+  openGroups,
 } from '@layouts/utils'
-import { TransitionGroup } from 'vue'
 
 const props = defineProps({
   item: {
@@ -119,7 +120,7 @@ watch(configStore.isVerticalNavMini(isVerticalNavHovered), val => {
 
 <template>
   <li
-  
+    v-if="canViewNavMenuGroup(item)"
     class="nav-group"
     :class="[
       {

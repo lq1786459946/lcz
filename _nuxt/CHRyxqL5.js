@@ -1,1 +1,0 @@
-import{b4 as s,b3 as c}from"./hT7Su8Cx.js";const i=$fetch.create({async onRequest({options:e}){e.baseURL=s().public.apiBaseUrl||"/api";const a=c("accessToken").value;a&&(e.headers={...e.headers,Authorization:`Bearer ${a}`})}});export{i as $};

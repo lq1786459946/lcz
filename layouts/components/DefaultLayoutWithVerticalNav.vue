@@ -66,7 +66,9 @@ const getToolTreeList = () => {
 		}
 	});
 };
-getToolTreeList();
+onMounted(() => {
+	getToolTreeList();
+});
 </script>
 
 <template>

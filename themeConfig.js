@@ -34,6 +34,10 @@ export const { themeConfig, layoutConfig } = defineThemeConfig({
 		skin: Skins.Default,
 		iconRenderer: VIcon,
 	},
+	auth: {
+		// 直接设置 origin
+		origin: process.env.NUXT_PUBLIC_SITE_URL,
+	},
 	navbar: {
 		type: NavbarType.Sticky,
 		navbarBlur: true,
